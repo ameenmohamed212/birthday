@@ -202,14 +202,14 @@ color: #920a38;
   text-align: center;
 
    margin: 20px 0; }
-   /* صفحة الإيموجي 🎁 */
+/* 💖 صفحة الإيموجي */
 #gift-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f9d1e4, #f8bbd0);
+  background: linear-gradient(135deg, #fde2e4, #dda6b9);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,13 +217,23 @@ color: #920a38;
   transition: opacity 1s ease;
 }
 
+/* 🎁 البوكس */
 #gift-emoji {
   font-size: 80px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  animation: bounce 1.5s infinite, shine 3s infinite ease-in-out;
 }
 
-#gift-emoji:hover {
-  transform: scale(1.1) rotate(10deg);
+/* ✨ تأثير الاهتزاز */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ✨ تأثير اللمعة */
+@keyframes shine {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
 }
 
