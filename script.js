@@ -1,46 +1,4 @@
-// tab switching
-// tab switching
-// 🎉 دالة لتشغيل الكونفيتي باستمرار في صفحة الترحيب فقط
-let confettiRunning = false;
-let confettiInterval;
 
-function startConfettiLoop() {
-  if (confettiRunning) return; // لو شغال بالفعل ميتكررش
-  confettiRunning = true;
-
-  confettiInterval = setInterval(() => {
-    confetti({
-      particleCount: 7,
-      startVelocity: 25,
-      spread: 360,
-      ticks: 60,
-      origin: { x: Math.random(), y: Math.random() - 0.2 }
-    });
-  }, 200); // كل 0.2 ثانية يرمي شوية كونفيتي
-}
-
-function stopConfettiLoop() {
-  confettiRunning = false;
-  clearInterval(confettiInterval);
-}
-
-// 🚀 لما الصفحة تفتح لأول مرة — شغّل الكونفيتي
-window.addEventListener("load", startConfettiLoop);
-
-// 🧁 لما المستخدم يدوس Enter — وقّف الكونفيتي وادخل على الصفحة التانية
-document.getElementById("enter-btn").addEventListener("click", function() {
-  const welcome = document.getElementById("welcome-screen");
-  const mainPage = document.getElementById("main-page");
-
-  // إخفاء شاشة الترحيب تدريجيًا
-  welcome.style.opacity = "0";
-  stopConfettiLoop(); // 🔇 وقف الكونفيتي هنا
-
-  setTimeout(() => {
-    welcome.style.display = "none";
-    mainPage.style.display = "block";
-  }, 1000);
-});
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
 
@@ -159,3 +117,4 @@ function updateConfetti() {
 
 
 drawConfetti();
+
