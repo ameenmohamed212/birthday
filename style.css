@@ -200,4 +200,39 @@ color: #920a38;
   font-family: 'Great Vibes', cursive; 
   font-size: 42px; color: #920a38;
   text-align: center;
+
    margin: 20px 0; }
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  linear-gradient(180deg, #ffd6dc 0%, #ffeef4 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #920a38;
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  z-index: 10;
+  transition: opacity 1s ease;
+}
+
+#welcome-screen button {
+  margin-top: 20px;
+  background-color:#920a38;
+   color: #ffffff;
+  border: 2px solid #920a38;
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-family: 'Great Vibes', cursive;
+  cursor: pointer;
+}
+
+#welcome-screen button:hover {
+  background-color: #920a38;
+  color: white;
+}
