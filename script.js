@@ -117,4 +117,15 @@ function updateConfetti() {
 
 
 drawConfetti();
+// لما المستخدم يدوس على الإيموجي 🎁
+document.getElementById("gift-emoji").addEventListener("click", function() {
+  const giftScreen = document.getElementById("gift-screen");
+  const mainPage = document.getElementById("main-page");
+
+  giftScreen.style.opacity = "0";
+  setTimeout(() => {
+    giftScreen.style.display = "none";
+    mainPage.style.display = "block";
+  }, 1000);
+});
 
