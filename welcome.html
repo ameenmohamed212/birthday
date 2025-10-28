@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Your Birthday Wonderland</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffb6c1, #f9d1ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #c2185b;
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeInDown 2s ease;
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      background-color: #c2185b;
+      color: #ffffff;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background-color:  #c2185b;
+      transform: scale(1.1);
+    }
+
+    /* Floating hearts background animation */
+    .heart {
+      position: absolute;
+      color: rgba(255,255,255,0.6);
+      font-size: 20px;
+      animation: float 10s infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Welcome to Your Birthday Wonderland 🎂🎈💫💝</h1>
+  <button onclick="enterSite()">enter 🎁</button>
+
+  <script>
+    // زر الدخول
+    function enterSite() {
+      window.location.href = 'index.html'; // هنا بتدخّلها على الصفحة الأساسية
+    }
+
+    // قلوب بتطفو في الخلفية
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (8 + Math.random() * 5) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 12000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+  <!-- مكتبة الكونفيتي -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+  // دالة لعمل فرقعات خفيفة ومتكررة
+  function burstConfetti() {
+    confetti({
+      particleCount: 60,     // عدد القصاصات في كل فرقعة
+      spread: 70,            // مدى الانتشار
+      origin: { y: 0.6 },    // مكان الانطلاق في الصفحة
+      startVelocity: 45,     // سرعة البداية
+      colors: ['#ffb6c1', '#ff69b4', '#ffffff', '#ffc0cb'] // ألوان لطيفة (درجات بينك)
+    });
+  }
+
+  // تعمل فرقعة كل نص ثانية باستمرار
+  setInterval(burstConfetti, 500);
+</script>
+</body>
+</html>
