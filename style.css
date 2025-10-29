@@ -245,6 +245,7 @@ color: #920a38;
   padding: 30px;
 }
 
+/* ✉️ شكل الظرف */
 #envelope {
   font-size: 80px;
   cursor: pointer;
@@ -255,20 +256,29 @@ color: #920a38;
   transform: scale(1.1) rotate(-10deg);
 }
 
+/* 💌 شكل الرسالة بعد الفتح */
 #actual-letter {
-  background: white;
-  color: #000000;
+  background: #fffafc;
+  color: #333;
   border-radius: 15px;
-  padding: 20px;
-  max-width: 90%;
-  margin-top: 20px;
-  box-shadow: 0 0px 0px rgba(0,0,0,0.0);
- 
-  font-size: 22px;
+  padding: 25px 30px;
+  width: 90%;
+  max-width: 380px; /* العرض الأقصى للرسالة */
+  margin-top: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+
   animation: fadeIn 1s ease forwards;
+
+  max-height: 70vh;   /* علشان ما تبقاش طويلة أوي */
+  overflow-y: auto;   /* لو الكلام كتير، يتحرك جوه الرسالة بس */
 }
 
-/* تأثير الظهور */
+/* 🩷 تأثير الظهور */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -328,5 +338,6 @@ color: #920a38;
 .note-line:hover {
   transform: scale(1.02);
 }
+
 
 
