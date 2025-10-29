@@ -129,3 +129,13 @@ document.getElementById("gift-emoji").addEventListener("click", function() {
   }, 1000);
 });
 
+// ✉️ فتح الظرف
+const envelope = document.getElementById("envelope");
+const actualLetter = document.getElementById("actual-letter");
+
+if (envelope) {
+  envelope.addEventListener("click", () => {
+    envelope.style.display = "none";
+    actualLetter.style.display = "block";
+  });
+}
