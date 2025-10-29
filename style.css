@@ -236,4 +236,97 @@ color: #920a38;
   0%, 100% { filter: brightness(1); }
   50% { filter: brightness(1.3); }
 }
+#letter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+#envelope {
+  font-size: 80px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+#envelope:hover {
+  transform: scale(1.1) rotate(-10deg);
+}
+
+#actual-letter {
+  background: white;
+  color: #000000;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 90%;
+  margin-top: 20px;
+  box-shadow: 0 0px 0px rgba(0,0,0,0.0);
+ 
+  font-size: 22px;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* تأثير الظهور */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* 💫 تأثير هادئ على النوتس */
+.notes-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.note-line {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* كل واحدة تظهر بعد التانية */
+.note-line:nth-child(1) { animation-delay: 0.2s; }
+.note-line:nth-child(2) { animation-delay: 0.4s; }
+.note-line:nth-child(3) { animation-delay: 0.6s; }
+.note-line:nth-child(4) { animation-delay: 0.8s; }
+.note-line:nth-child(5) { animation-delay: 1s; }
+.note-line:nth-child(6) { animation-delay: 1.2s; }
+.note-line:nth-child(7) { animation-delay: 1.4s; }
+.note-line:nth-child(8) { animation-delay: 1.6s; }
+.note-line:nth-child(9) { animation-delay: 1.8s; }
+.note-line:nth-child(10) { animation-delay: 2s; }
+.note-line:nth-child(11) { animation-delay: 2.2s; }
+.note-line:nth-child(12) { animation-delay: 2.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 💛 Sticky Notes Style */
+.note-line {
+  background: #920a38;
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+  margin: 12px 0;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+.note-line:nth-child(even) {
+  transform: rotate(1deg);
+}
+.note-line:hover {
+  transform: scale(1.02);
+}
+
 
