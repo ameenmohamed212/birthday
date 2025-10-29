@@ -261,23 +261,22 @@ color: #920a38;
   background: #fffafc;
   color: #333;
   border-radius: 15px;
-  padding: 25px 30px;
-  width: 90%;
-  max-width: 380px; /* العرض الأقصى للرسالة */
+  padding: 30px 40px;
+  width: 95%;
+  max-width: 600px; /* ✅ وسّعنا العرض شوية */
   margin-top: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 
-  font-size: 16px;
-  line-height: 1.6;
-  text-align: left;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: justify; /* ✅ بيخلي الكلام يتوزع بعرض الصفحة */
   font-family: 'Poppins', sans-serif;
 
   animation: fadeIn 1s ease forwards;
 
-  max-height: 70vh;   /* علشان ما تبقاش طويلة أوي */
-  overflow-y: auto;   /* لو الكلام كتير، يتحرك جوه الرسالة بس */
+  max-height: 75vh;
+  overflow-y: auto;
 }
-
 /* 🩷 تأثير الظهور */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
@@ -338,6 +337,7 @@ color: #920a38;
 .note-line:hover {
   transform: scale(1.02);
 }
+
 
 
 
